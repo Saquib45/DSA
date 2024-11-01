@@ -34,9 +34,29 @@ void Recursive_preordered(TreeNode* root){
     Recursive_preordered(root->right);
 }
 
+void Recursive_postordered(TreeNode* root){
+    if(root==NULL) return;
+    Recursive_postordered(root->left);
+    Recursive_postordered(root->right);
+    cout<<root->data<<" ";
+}
+
+void Recursive_inordered(TreeNode* root){
+    if(root==NULL) return;
+    Recursive_inordered(root->left);
+    cout<<root->data<<" ";
+    Recursive_inordered(root->right);
+    
+}
+
 int main(){
     TreeNode* root=NULL;
     root=input(root);
     Recursive_preordered(root);
+    cout<<endl;
+    Recursive_postordered(root);
+    cout<<endl;
+    Recursive_inordered(root);
+
     return 0;
 }
