@@ -52,10 +52,13 @@ void Recursive_inordered(TreeNode* root){
 int main(){
     TreeNode* root=NULL;
     root=input(root);
+    cout<<"preordered traversal"<<endl;
     Recursive_preordered(root);
     cout<<endl;
+    cout<<"postordered traversal"<<endl;
     Recursive_postordered(root);
     cout<<endl;
+    cout<<"inordered output"<<endl;
     Recursive_inordered(root);
 
     return 0;
