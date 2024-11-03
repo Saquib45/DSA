@@ -49,6 +49,7 @@ void Recursive_inordered(TreeNode* root){
     
 }
 
+
 int main(){
     TreeNode* root=NULL;
     root=input(root);
@@ -60,6 +61,5 @@ int main(){
     cout<<endl;
     cout<<"inordered output"<<endl;
     Recursive_inordered(root);
-
     return 0;
 }

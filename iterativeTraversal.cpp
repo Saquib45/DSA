@@ -13,7 +13,7 @@ class TreeNode{
     }
 };
 
-TreeNode* input(TreeNode* &root){
+TreeNode* input(TreeNode* &root){            //take preordered-wise input
     cout<<"enter the root data"<<endl;
     int data;
     cin>>data;
@@ -25,6 +25,7 @@ TreeNode* input(TreeNode* &root){
     input(root->right);
     return root;
 }
+
 
 void iterative_preordered(TreeNode* root){
     if(root==NULL) return;
@@ -97,7 +98,7 @@ int main(){
     cout<<endl<<"output of postordered"<<endl;
     iterative_postordered(root);
 
-    cout<<endl<<"output of postordered"<<endl;
+    cout<<endl<<"output of inordered"<<endl;
     iterative_inordered(root);
 
     return 0;
