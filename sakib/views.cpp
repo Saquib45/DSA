@@ -1,7 +1,20 @@
 #include<iostream>
 using namespace std;
 #include<queue>
-#include "Treeclass.cpp"
+#include<unordered_map>
+#include<queue>
+class TreeNode{
+    public:
+    int data;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int data){
+        this->data=data;
+        left=NULL;
+        right=NULL;
+    }
+};
+
 
 TreeNode* input(TreeNode* &root){
     queue<TreeNode*> q;
@@ -70,7 +83,53 @@ void rightview(TreeNode* root){
     }
 }
 
+void topview(TreeNode* root){
+    unordered_map<int,int> map;
+    if(root==NULL) return;
+    queue<pair<TreeNode*,int>> q;
+    q.push({root,0});
+    while(!q.empty()){
+        auto temp=q.front();
+        q.pop();
+        TreeNode* frontnode=temp.first;
+        int hd=temp.second;
+        if(map.find(hd)==map.end()){
+            map[hd]=frontnode->data;
+        }
+        if(frontnode->left){
+            q.push({frontnode->left,hd-1});
+        }
+        if(frontnode->right){
+            q.push({frontnode->right,hd+1});
+        }
+    }
+    for(auto i:map){
+        cout<<i.second<<" ";
+    }
+}
 
+void bottomview(TreeNode* root){
+    unordered_map<int,int> map;
+    if(root==NULL) return;
+    queue<pair<TreeNode*,int>>q;
+    q.push({root,0});
+    while(!q.empty()){
+        auto temp=q.front();
+        q.pop();
+        TreeNode* frontnode=temp.first;
+        int hd=temp.second;
+        map[hd]=frontnode->data;
+        if(frontnode->left){
+            q.push({frontnode->left,hd-1});
+        }
+        if(frontnode->right){
+            q.push({frontnode->right,hd+1});
+        }
+    }
+    for(auto i:map){
+        cout<<i.second<<" ";
+    }
+}
 int main(){
     TreeNode* root=NULL;
     root=input(root);
@@ -78,4 +137,8 @@ int main(){
     leftview(root);
     cout<<endl<<"right view:";
     rightview(root);
+    cout<<endl<<"topview:";
+    topview(root);
+    cout<<endl<<"bottom view:";
+    bottomview(root);
 }
