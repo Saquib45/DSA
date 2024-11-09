@@ -2,6 +2,7 @@
 using namespace std;
 #include<queue>
 #include<unordered_map>
+#include<map>
 
 class TreeNode{
     public:
@@ -45,8 +46,9 @@ TreeNode* input(TreeNode* &root){
     return root;
 }
 void vertical_traversal(TreeNode* &root){
-    unordered_map<int,unordered_map<int,vector<int>>> map; 
+    map<int,map<int,vector<int>>> map; 
     queue<pair<TreeNode*,pair<int,int>>> q;
+    vector<int> ans;
     q.push({root,{0,0}});
     while(!q.empty()){
         auto temp=q.front();
