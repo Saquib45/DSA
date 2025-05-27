@@ -28,7 +28,7 @@ TreeNode* input(TreeNode* &root){
         q.pop();
         cout<<"enter the left data of:"<<temp->data<<endl;
         int leftdata;
-        cin>>leftdata;
+        cin>>leftdata; 
         if(leftdata!=-1){
             temp->left=new TreeNode(leftdata);
             q.push(temp->left);
@@ -45,7 +45,7 @@ TreeNode* input(TreeNode* &root){
     }
     return root;
 }
-
+     
 
 void leftview(TreeNode* root){
     if(root==NULL) return;

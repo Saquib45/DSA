@@ -42,6 +42,7 @@ TreeNode* input(TreeNode* &root){
     }
     return root;
 }
+
 TreeNode* ancestor(TreeNode* root,int first,int second){
     if(root==NULL || root->data==first || root->data==second) return root;
     TreeNode* left=ancestor(root->left,first,second);
@@ -50,6 +51,7 @@ TreeNode* ancestor(TreeNode* root,int first,int second){
     else if(right==NULL) return left;
     else return root;
 }
+
 int main(){
  TreeNode* root=input(root);
  cout<<"enter the first node data:";
