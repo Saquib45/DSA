@@ -31,16 +31,14 @@ class DisjointSet {
         if(rank[ultimate_parent_u]<rank[ultimate_parent_v]){
             parent[ultimate_parent_u]=ultimate_parent_v;
         }
-
+        
         else if(rank[ultimate_parent_u]>rank[ultimate_parent_v]){
             parent[ultimate_parent_v]=ultimate_parent_u;
         }
-
         else{
             parent[ultimate_parent_v]=ultimate_parent_u;
             rank[ultimate_parent_u]++;
         }
-        
     }
 
     void UnionBySize(int u,int v){
