@@ -1,6 +1,18 @@
 #include<iostream>
 using namespace std;
-#include"Treeclass.cpp"
+
+class TreeNode{
+    public:
+    int data;
+    TreeNode* left;
+    TreeNode* right;
+    public:
+    TreeNode(int data){
+        this->data=data;
+        left=NULL;
+        right=NULL;
+    }
+};
 
 TreeNode* input(TreeNode* &root){
     cout<<"enter the root data"<<endl;

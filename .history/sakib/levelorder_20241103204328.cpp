@@ -1,8 +1,17 @@
 #include<iostream>
 using namespace std;
 #include<queue>
-#include"Treeclass.cpp"
-
+class TreeNode{
+    public:
+    int data;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int data){
+        this->data=data;
+        left=NULL;
+        right=NULL;
+    }
+};
 TreeNode* input(TreeNode* &root){
     cout<<"Enter the root data:"<<endl;
     int data;
